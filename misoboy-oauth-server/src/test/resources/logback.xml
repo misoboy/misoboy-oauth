@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="300 seconds" debug="true">
+  	<!-- ==================================================================== -->
+	<!-- # Console Appender  -->
+	<!-- ==================================================================== -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %class{50}.%method:%line %msg%n</pattern>
+        </encoder>
+    </appender>
+	<!-- ==================================================================== -->
+	<!-- # Service Loggers  -->
+	<!-- ==================================================================== -->
+	<!-- 서비스(업무)레벨로그 -->
+	<logger name="kr.misoboy" additivity="false" level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- ==================================================================== -->
+	<!-- # Root Loggers  -->
+	<!-- ==================================================================== -->
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>
